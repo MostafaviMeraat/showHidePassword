@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://kit.fontawesome.com/fc61c6cc87.js" crossorigin="anonymous"></script>
+  <!-- ------------ -->
+  <style>
+    body {
+  font-family:san-serif;
+  width:100vw;
+  height:100vh;
+  background-color:#1B263B;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0;
+  margin:0;
+}
+
+.frame {
+    position: relative;
+  width:20rem;
+  height:15rem;
+  display:flex;
+  flex-flow:column wrap;
+  justify-content:center;
+  align-items:center;
+  border:.2rem solid #415A77;
+  border-radius:.5rem;
+}
+
+.input{
+  font-size:18px;
+  border:none;
+  border-bottom:.1em solid #fff;
+  border-radius:.5em;
+  background-color:#415A77;
+  color:#fff;
+  outline:none;
+  margin:1.2em;
+  padding : .4em .4em;
+}
+::placeholder{
+  color:#fff;
+  opacity:.6;
+  padding-left:.2em
+}
+input:hover{
+    box-shadow:0 0 .4em .05em #fff;
+    border-bottom:.1em solid #415A77;
+}
+#eye{
+    position: absolute;
+    top: 63%;
+    right:18%;
+    opacity: .7;
+    cursor: pointer;
+}
+
+  </style>
+  <!-- ---------- -->
+</head>
+<body>
+  <div class='frame'>
+    <input class="input user" type="email" placeholder="Username"/>
+    <input class="input pass" type="password" placeholder="Password" id="password"/>
+    <span>
+        <i class="fa-regular fa-eye" id="eye" onclick="toggle()" ></i>
+    </span>
+  </div>
+  <!-- ------------ -->
+  <script type="text/javascript">
+    toggle = () => {
+        const pass = document.getElementById("password");
+        if (pass.type=='password'){
+            pass.setAttribute('type','text');
+        }
+        else{
+            pass.setAttribute('type','password');
+        }
+    }
+  </script>
+</body>
+</html>
